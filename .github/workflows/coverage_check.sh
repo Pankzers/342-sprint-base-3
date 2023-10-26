@@ -1,7 +1,6 @@
 #!/bin/bash
 
-cfg_path=`find ~ -name "cfg_location.sh"`
-source $cfg_path
+source ./.github/workflows/cfg_location.sh
 
 # read coverage bar from config
 while IFS= read -r line
@@ -25,12 +24,12 @@ done < "$filename"
 
 if [ -z "$line_coverage_bar" ]
 then
-  echo "Failed to extra coverage bar. Please contact instructor."
+  echo "Failed to extra due date. Please contact instructor."
   exit 1
 fi
 if [ -z "$function_coverage_bar" ]
 then
-  echo "Failed to extra coverage bar. Please contact instructor."
+  echo "Failed to extra due date. Please contact instructor."
   exit 1
 fi
 
@@ -53,4 +52,3 @@ ret=$?
 if [ $ret -ne 0 ]; then
      exit 1 
 fi
-
